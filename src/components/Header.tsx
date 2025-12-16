@@ -23,6 +23,16 @@ const Header = () => {
             >
               Services
             </Link>
+            <Link 
+              to="/about" 
+              className={`transition-colors font-medium ${
+                location.pathname === '/about' 
+                  ? 'text-primary' 
+                  : 'text-foreground hover:text-primary'
+              }`}
+            >
+              About
+            </Link>
             {isHome ? (
               <a href="#mission" className="text-foreground hover:text-primary transition-colors font-medium">
                 Mission
