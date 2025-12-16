@@ -49,7 +49,7 @@ const About = () => {
     <div className="min-h-screen bg-background">
       <Header />
       
-      <main className="pt-64">
+      <main className="pt-32">
         {/* Hero Section */}
         <section className="py-16 bg-background">
           <div className="container mx-auto px-4 text-center">

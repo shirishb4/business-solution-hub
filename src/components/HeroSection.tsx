@@ -3,7 +3,7 @@ import heroImage from '@/assets/hero-ai.jpg';
 
 const HeroSection = () => {
   return (
-    <section className="pt-64 pb-0 bg-background">
+    <section className="pt-32 pb-0 bg-background">
       <div className="container mx-auto px-4 text-center">
         <h1 className="heading-hero mb-4 animate-fade-in-up">
           Empowering AI Solutions for<br />Business
