@@ -10,7 +10,6 @@ const services = [
     description: 'Intelligent conversational AI that handles customer support 24/7, automates responses, and learns from interactions.',
     features: ['Natural Language Processing', 'Multi-language Support', 'CRM Integration', 'Analytics Dashboard'],
     price: '₹25,000',
-    period: '/month',
     popular: false,
   },
   {
@@ -19,7 +18,6 @@ const services = [
     description: 'Streamline operations with intelligent workflow automation that reduces manual tasks and increases efficiency.',
     features: ['Workflow Optimization', 'Document Processing', 'Email Automation', 'Custom Integrations'],
     price: '₹50,000',
-    period: '/month',
     popular: true,
   },
   {
@@ -28,7 +26,6 @@ const services = [
     description: 'Transform raw data into actionable insights with advanced analytics and beautiful visualizations.',
     features: ['Real-time Dashboards', 'Predictive Analytics', 'Custom Reports', 'Data Visualization'],
     price: '₹35,000',
-    period: '/month',
     popular: false,
   },
   {
@@ -37,7 +34,6 @@ const services = [
     description: 'Custom ML models tailored to your business needs for prediction, classification, and optimization.',
     features: ['Custom Model Training', 'API Integration', 'Model Monitoring', 'Continuous Learning'],
     price: '₹75,000',
-    period: '/month',
     popular: false,
   },
 ];
@@ -78,7 +74,7 @@ const Services = () => {
         </section>
 
         {/* Pricing Cards */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-16 bg-primary">
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {services.map((service, index) => (
@@ -86,45 +82,42 @@ const Services = () => {
                   key={service.title}
                   className={`relative rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 animate-fade-in-up ${
                     service.popular 
-                      ? 'bg-primary text-primary-foreground shadow-2xl scale-105' 
+                      ? 'bg-lime text-primary shadow-2xl scale-105' 
                       : 'bg-background border border-border shadow-lg'
                   }`}
                   style={{ animationDelay: `${0.1 * index}s` }}
                 >
                   {service.popular && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime text-primary px-4 py-1 rounded-full text-xs font-bold uppercase">
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-xs font-bold uppercase">
                       Most Popular
                     </span>
                   )}
                   
                   <div className={`w-12 h-12 rounded-2xl flex items-center justify-center mb-4 ${
-                    service.popular ? 'bg-lime' : 'bg-primary'
+                    service.popular ? 'bg-primary' : 'bg-primary'
                   }`}>
-                    <service.icon className={`w-6 h-6 ${service.popular ? 'text-primary' : 'text-primary-foreground'}`} />
+                    <service.icon className={`w-6 h-6 ${service.popular ? 'text-lime' : 'text-primary-foreground'}`} />
                   </div>
                   
-                  <h3 className={`font-display text-2xl mb-2 ${service.popular ? 'text-primary-foreground' : 'text-primary'}`}>
+                  <h3 className={`font-display text-2xl mb-2 ${service.popular ? 'text-primary' : 'text-primary'}`}>
                     {service.title}
                   </h3>
                   
-                  <p className={`text-sm mb-4 ${service.popular ? 'text-primary-foreground/80' : 'text-muted-foreground'}`}>
+                  <p className={`text-sm mb-4 ${service.popular ? 'text-primary/80' : 'text-muted-foreground'}`}>
                     {service.description}
                   </p>
                   
                   <div className="mb-6">
-                    <span className={`text-3xl font-bold ${service.popular ? 'text-primary-foreground' : 'text-primary'}`}>
+                    <span className={`text-3xl font-bold ${service.popular ? 'text-primary' : 'text-primary'}`}>
                       {service.price}
-                    </span>
-                    <span className={service.popular ? 'text-primary-foreground/60' : 'text-muted-foreground'}>
-                      {service.period}
                     </span>
                   </div>
                   
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature) => (
                       <li key={feature} className="flex items-center gap-2 text-sm">
-                        <Check className={`w-4 h-4 ${service.popular ? 'text-lime' : 'text-lime'}`} />
-                        <span className={service.popular ? 'text-primary-foreground/90' : 'text-foreground'}>
+                        <Check className={`w-4 h-4 ${service.popular ? 'text-primary' : 'text-lime'}`} />
+                        <span className={service.popular ? 'text-primary/90' : 'text-foreground'}>
                           {feature}
                         </span>
                       </li>
@@ -133,7 +126,7 @@ const Services = () => {
                   
                   <button className={`w-full py-3 rounded-full font-semibold transition-all duration-300 flex items-center justify-center gap-2 group ${
                     service.popular 
-                      ? 'bg-lime text-primary hover:bg-lime/90' 
+                      ? 'bg-primary text-primary-foreground hover:opacity-90' 
                       : 'bg-primary text-primary-foreground hover:opacity-90'
                   }`}>
                     Get Started
@@ -187,7 +180,7 @@ const Services = () => {
               href="tel:+919819068803" 
               className="btn-primary inline-flex items-center gap-2"
             >
-              Call +91 98190 6 8803
+              Call +91 98190 68803
             </a>
           </div>
         </section>

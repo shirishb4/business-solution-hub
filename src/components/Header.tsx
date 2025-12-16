@@ -1,5 +1,5 @@
-import { Bot } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import yesBeelogo from '@/assets/yesbee-logo.png';
 
 const Header = () => {
   const location = useLocation();
@@ -10,10 +10,7 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <div className="bg-lime px-3 py-1.5 rounded-md flex items-center gap-2">
-              <Bot className="w-5 h-5 text-primary" />
-              <span className="font-display text-lg text-primary tracking-wider">SB Solutions</span>
-            </div>
+            <img src={yesBeelogo} alt="YesBee AI Automation" className="h-12 w-auto" />
           </Link>
           <div className="hidden md:flex items-center gap-8">
             <Link 
