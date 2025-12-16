@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-ai.jpg';
 
 const HeroSection = () => {
@@ -10,12 +11,13 @@ const HeroSection = () => {
         <p className="text-muted-foreground mb-8 max-w-lg mx-auto animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           Transforming Industries with Innovative AI Technology.
         </p>
-        <button 
-          className="btn-primary animate-fade-in-up" 
+        <Link 
+          to="/services"
+          className="btn-primary inline-block animate-fade-in-up" 
           style={{ animationDelay: '0.4s' }}
         >
           Explore Our Services
-        </button>
+        </Link>
       </div>
       
       <div className="mt-12 w-full overflow-hidden">
