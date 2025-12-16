@@ -9,7 +9,6 @@ const services = [
     title: 'AI Chatbots',
     description: 'Intelligent conversational AI that handles customer support 24/7, automates responses, and learns from interactions.',
     features: ['Natural Language Processing', 'Multi-language Support', 'CRM Integration', 'Analytics Dashboard'],
-    price: '₹25,000',
     popular: false,
   },
   {
@@ -17,7 +16,6 @@ const services = [
     title: 'Business Automation',
     description: 'Streamline operations with intelligent workflow automation that reduces manual tasks and increases efficiency.',
     features: ['Workflow Optimization', 'Document Processing', 'Email Automation', 'Custom Integrations'],
-    price: '₹50,000',
     popular: true,
   },
   {
@@ -25,7 +23,6 @@ const services = [
     title: 'Data Analytics',
     description: 'Transform raw data into actionable insights with advanced analytics and beautiful visualizations.',
     features: ['Real-time Dashboards', 'Predictive Analytics', 'Custom Reports', 'Data Visualization'],
-    price: '₹35,000',
     popular: false,
   },
   {
@@ -33,7 +30,6 @@ const services = [
     title: 'Machine Learning',
     description: 'Custom ML models tailored to your business needs for prediction, classification, and optimization.',
     features: ['Custom Model Training', 'API Integration', 'Model Monitoring', 'Continuous Learning'],
-    price: '₹75,000',
     popular: false,
   },
 ];
@@ -107,11 +103,6 @@ const Services = () => {
                     {service.description}
                   </p>
                   
-                  <div className="mb-6">
-                    <span className={`text-3xl font-bold ${service.popular ? 'text-primary' : 'text-primary'}`}>
-                      {service.price}
-                    </span>
-                  </div>
                   
                   <ul className="space-y-2 mb-6">
                     {service.features.map((feature) => (
