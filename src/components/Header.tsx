@@ -1,58 +1,113 @@
 import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, Linkedin } from 'lucide-react';
+import { useState } from 'react';
 import yesBeelogo from '@/assets/yesbee-robot-logo.png';
 
 const Header = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: '#services', label: 'Services' },
+    { href: '#about', label: 'About' },
+    { href: '#use-cases', label: 'Use Cases' },
+    { href: '#testimonials', label: 'Testimonials' },
+    { href: '#contact', label: 'Contact' },
+  ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm">
-      <div className="container mx-auto px-4 py-4">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+      <div className="container mx-auto px-4 py-3">
         <nav className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
-            <img src={yesBeelogo} alt="YesBee AI Automation" className="h-24 w-auto" />
+            <img src={yesBeelogo} alt="YESBEE AI Automation" className="h-16 w-auto" />
           </Link>
-          <div className="hidden md:flex items-center gap-8">
-            <Link 
-              to="/services" 
-              className={`transition-colors font-medium ${
-                location.pathname === '/services' 
-                  ? 'text-primary' 
-                  : 'text-foreground hover:text-primary'
-              }`}
+          
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center gap-6">
+            {navLinks.map((link) => (
+              isHome ? (
+                <a 
+                  key={link.href}
+                  href={link.href}
+                  className="text-foreground hover:text-primary transition-colors font-medium text-sm"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link 
+                  key={link.href}
+                  to={`/${link.href}`}
+                  className="text-foreground hover:text-primary transition-colors font-medium text-sm"
+                >
+                  {link.label}
+                </Link>
+              )
+            ))}
+            
+            <a 
+              href="https://www.linkedin.com/in/shirish-bhambure-b7687615/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-linkedin py-2 px-4 text-sm inline-flex items-center gap-2"
             >
-              Services
-            </Link>
-            <Link 
-              to="/about" 
-              className={`transition-colors font-medium ${
-                location.pathname === '/about' 
-                  ? 'text-primary' 
-                  : 'text-foreground hover:text-primary'
-              }`}
-            >
-              About
-            </Link>
-            {isHome ? (
-              <a href="#mission" className="text-foreground hover:text-primary transition-colors font-medium">
-                Mission
-              </a>
-            ) : (
-              <Link to="/#mission" className="text-foreground hover:text-primary transition-colors font-medium">
-                Mission
-              </Link>
-            )}
-            {isHome ? (
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
-                Contact
-              </a>
-            ) : (
-              <Link to="/#contact" className="text-foreground hover:text-primary transition-colors font-medium">
-                Contact
-              </Link>
-            )}
+              <Linkedin className="w-4 h-4" />
+              Connect
+            </a>
           </div>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden p-2"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6 text-foreground" />
+            ) : (
+              <Menu className="w-6 h-6 text-foreground" />
+            )}
+          </button>
         </nav>
+
+        {/* Mobile Navigation */}
+        {mobileMenuOpen && (
+          <div className="md:hidden py-4 border-t border-border mt-3">
+            <div className="flex flex-col gap-4">
+              {navLinks.map((link) => (
+                isHome ? (
+                  <a 
+                    key={link.href}
+                    href={link.href}
+                    className="text-foreground hover:text-primary transition-colors font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link 
+                    key={link.href}
+                    to={`/${link.href}`}
+                    className="text-foreground hover:text-primary transition-colors font-medium"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              ))}
+              
+              <a 
+                href="https://www.linkedin.com/in/shirish-bhambure-b7687615/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-linkedin py-2 px-4 text-sm inline-flex items-center gap-2 w-fit"
+              >
+                <Linkedin className="w-4 h-4" />
+                Connect on LinkedIn
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </header>
   );
