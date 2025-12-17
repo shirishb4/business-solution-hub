@@ -1,8 +1,12 @@
 import Header from '@/components/Header';
 import HeroSection from '@/components/HeroSection';
 import MarqueeBanner from '@/components/MarqueeBanner';
-import MissionSection from '@/components/MissionSection';
-import ImageCarousel from '@/components/ImageCarousel';
+import AboutSection from '@/components/AboutSection';
+import ServicesSection from '@/components/ServicesSection';
+import WhyWorkWithMe from '@/components/WhyWorkWithMe';
+import UseCases from '@/components/UseCases';
+import SocialProof from '@/components/SocialProof';
+import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 import ChatBot from '@/components/ChatBot';
 
@@ -13,8 +17,12 @@ const Index = () => {
       <main>
         <HeroSection />
         <MarqueeBanner />
-        <MissionSection />
-        <ImageCarousel />
+        <AboutSection />
+        <ServicesSection />
+        <WhyWorkWithMe />
+        <UseCases />
+        <SocialProof />
+        <FinalCTA />
       </main>
       <Footer />
       <ChatBot />

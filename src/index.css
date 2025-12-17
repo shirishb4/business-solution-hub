@@ -5,96 +5,99 @@
 @import '@fontsource/bebas-neue';
 @import '@fontsource/inter';
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* YESBEE AI Automation Design System
+   Primary: Intense Deep Blue (trust, intelligence)
+   Accent: Neon/Lime Green (automation, innovation)
+   Background: Soft white / light grey
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 65% 20%;
+    --background: 210 20% 98%;
+    --foreground: 230 80% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 65% 20%;
+    --card-foreground: 230 80% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 65% 20%;
+    --popover-foreground: 230 80% 15%;
 
-    --primary: 240 65% 27%;
+    --primary: 235 85% 25%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 82 100% 45%;
-    --secondary-foreground: 240 65% 10%;
+    --secondary: 75 100% 50%;
+    --secondary-foreground: 230 80% 10%;
 
-    --muted: 240 20% 95%;
-    --muted-foreground: 240 10% 40%;
+    --muted: 210 20% 94%;
+    --muted-foreground: 230 20% 40%;
 
-    --accent: 300 90% 55%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 75 100% 50%;
+    --accent-foreground: 230 80% 10%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 240 20% 90%;
-    --input: 240 20% 90%;
-    --ring: 240 65% 27%;
+    --border: 210 20% 90%;
+    --input: 210 20% 90%;
+    --ring: 235 85% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     /* Custom brand colors */
-    --navy: 240 65% 27%;
-    --navy-dark: 240 65% 20%;
-    --lime: 82 100% 45%;
+    --navy: 235 85% 25%;
+    --navy-dark: 235 85% 15%;
+    --navy-light: 235 60% 35%;
+    --lime: 75 100% 50%;
+    --lime-glow: 75 100% 60%;
     --cyan: 185 100% 50%;
-    --magenta: 300 90% 55%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-foreground: 230 20% 26%;
+    --sidebar-primary: 235 85% 25%;
     --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-accent: 210 20% 96%;
+    --sidebar-accent-foreground: 230 20% 26%;
+    --sidebar-border: 210 20% 91%;
+    --sidebar-ring: 235 85% 25%;
   }
 
   .dark {
-    --background: 240 65% 10%;
+    --background: 235 85% 8%;
     --foreground: 0 0% 98%;
 
-    --card: 240 65% 15%;
+    --card: 235 70% 12%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 240 65% 15%;
+    --popover: 235 70% 12%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 82 100% 45%;
-    --primary-foreground: 240 65% 10%;
+    --primary: 75 100% 50%;
+    --primary-foreground: 235 85% 10%;
 
-    --secondary: 240 65% 27%;
+    --secondary: 235 85% 25%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 240 30% 20%;
-    --muted-foreground: 240 10% 70%;
+    --muted: 235 40% 18%;
+    --muted-foreground: 210 20% 70%;
 
     --accent: 185 100% 50%;
-    --accent-foreground: 240 65% 10%;
+    --accent-foreground: 235 85% 10%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 240 30% 25%;
-    --input: 240 30% 25%;
-    --ring: 82 100% 45%;
+    --border: 235 40% 22%;
+    --input: 235 40% 22%;
+    --ring: 75 100% 50%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 235 85% 8%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 75 100% 50%;
+    --sidebar-primary-foreground: 235 85% 10%;
+    --sidebar-accent: 235 40% 15%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 235 40% 18%;
+    --sidebar-ring: 75 100% 50%;
   }
 }
 
@@ -114,24 +117,39 @@ All colors MUST be HSL.
 
 @layer components {
   .heading-hero {
-    @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-wide text-primary uppercase;
+    @apply text-4xl md:text-5xl lg:text-7xl font-bold tracking-wide text-primary uppercase;
     font-family: 'Bebas Neue', sans-serif;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.02em;
   }
 
   .heading-section {
-    @apply text-3xl md:text-4xl font-bold uppercase tracking-wider;
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold uppercase tracking-wide text-primary;
+    font-family: 'Bebas Neue', sans-serif;
+  }
+
+  .heading-card {
+    @apply text-xl md:text-2xl font-bold uppercase tracking-wide;
     font-family: 'Bebas Neue', sans-serif;
   }
 
   .btn-primary {
-    @apply bg-primary text-primary-foreground px-8 py-3 rounded-full font-semibold 
-           hover:opacity-90 transition-all duration-300 uppercase tracking-wider text-sm;
+    @apply bg-primary text-primary-foreground px-8 py-4 rounded-full font-semibold 
+           hover:opacity-90 transition-all duration-300 text-base shadow-lg hover:shadow-xl;
   }
 
-  .btn-outline-light {
-    @apply bg-transparent text-foreground border-2 border-current px-6 py-2 rounded-full 
-           font-medium hover:bg-foreground hover:text-background transition-all duration-300;
+  .btn-secondary {
+    @apply bg-secondary text-secondary-foreground px-8 py-4 rounded-full font-semibold 
+           hover:opacity-90 transition-all duration-300 text-base shadow-lg hover:shadow-xl;
+  }
+
+  .btn-outline {
+    @apply bg-transparent text-primary border-2 border-primary px-8 py-4 rounded-full 
+           font-semibold hover:bg-primary hover:text-primary-foreground transition-all duration-300;
+  }
+
+  .btn-linkedin {
+    @apply bg-[hsl(210,80%,45%)] text-white px-8 py-4 rounded-full font-semibold 
+           hover:bg-[hsl(210,80%,40%)] transition-all duration-300 shadow-lg hover:shadow-xl;
   }
 
   .marquee-container {
@@ -146,8 +164,20 @@ All colors MUST be HSL.
     @apply bg-primary text-primary-foreground;
   }
 
+  .section-light {
+    @apply bg-muted;
+  }
+
+  .card-service {
+    @apply bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-border;
+  }
+
   .card-navy {
-    @apply bg-primary text-primary-foreground rounded-3xl p-8;
+    @apply bg-primary text-primary-foreground rounded-2xl p-8;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-[hsl(var(--navy-light))] bg-clip-text text-transparent;
   }
 }
 
@@ -162,7 +192,7 @@ All colors MUST be HSL.
   }
 
   .animate-marquee {
-    animation: marquee 20s linear infinite;
+    animation: marquee 25s linear infinite;
   }
 
   @keyframes float {
@@ -206,5 +236,18 @@ All colors MUST be HSL.
 
   .animate-slide-in {
     animation: slide-in 0.8s ease-out forwards;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(var(--lime) / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(var(--lime) / 0.5);
+    }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
   }
 }
