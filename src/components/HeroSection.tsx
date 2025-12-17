@@ -51,17 +51,17 @@ const HeroSection = () => {
         </div>
 
         {/* Trust indicators */}
-        <div className="mt-16 flex flex-wrap justify-center gap-8 text-muted-foreground animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
+        <div className="mt-16 flex flex-wrap justify-center gap-8 text-foreground/80 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-secondary rounded-full" />
+            <span className="w-2 h-2 bg-primary rounded-full" />
             <span className="text-sm font-medium">Founder-Led Delivery</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-secondary rounded-full" />
+            <span className="w-2 h-2 bg-primary rounded-full" />
             <span className="text-sm font-medium">Measurable Results</span>
           </div>
           <div className="flex items-center gap-2">
-            <span className="w-2 h-2 bg-secondary rounded-full" />
+            <span className="w-2 h-2 bg-primary rounded-full" />
             <span className="text-sm font-medium">Ethical AI Solutions</span>
           </div>
         </div>
